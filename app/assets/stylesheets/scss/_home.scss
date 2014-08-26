@@ -1,0 +1,61 @@
+body{
+  background-color: #DEDCC3;
+}
+
+.container{
+  .header{
+    background-color: #41434A;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    .title-header{
+      color: #F2F1E9;
+    }
+    #menu-button{
+      color: #F2F1E9;
+      position:absolute;
+      padding-left: 2rem;
+      left: 0
+    }
+  }
+  .ledger-list{
+    background-color: blue;
+    width: 5rem;
+  }
+  .ledger-table{
+    display: none;
+    .table-content{
+      text-align: left;
+      td{
+        max-width: 5rem;
+      }
+    }
+  }
+  .ledgers{
+    margin-top: 1rem;
+    border: 1px solid #6E9489;
+    border-radius: 1rem;
+    margin: auto;
+    width: 90%;
+    max-width: 24rem;
+    overflow: hidden;
+    .item{
+      background-color: #6E9489;
+      color: white;
+      width: 100%;
+      padding-top: 0.4rem;
+      padding-bottom: 0.4rem;
+    }
+    .note{
+      background-color: white;
+      color: #41434A;
+    }
+    .date{
+      background-color: white;
+      color: lightgray;
+      font-size: .7rem;
+      position: relative;
+      left: 0;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.ledger_form
+  = link_to "Back", user_ledgers_path
+
+  = form_for @ledger, :url => user_ledgers_path, :html => { :method => :post } do |f| 
+
+    = f.text_field :name, placeholder: "Exercise", class: "input-field"
+    = f.text_field :set, placeholder: "Set", class: "input-field"
+    = f.text_field :reps, placeholder: "Reps", class: "input-field"
+    = f.text_field :weight, placeholder: "Weight", class: "input-field"
+    = f.text_field :time, placeholder: "Time", class: "input-field"
+    = f.text_field :distance, placeholder: "Distance", class: "input-field"
+    = f.text_field :feel, placeholder: "Feel", class: "input-field"
+
+    = f.submit "Log"

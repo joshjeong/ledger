@@ -1,0 +1,119 @@
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, input, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.container {
+  max-width: 568px;
+  text-align: center;
+  border-collapse: true; }
+  .container input {
+    border: 1px solid lightgray;
+    width: 17rem;
+    height: 2rem;
+    margin: auto;
+    display: block; }
+  .container .new_user {
+    margin-top: 3rem; }
+  .container .input-field {
+    padding-left: 1rem; }
+  .container .btn {
+    background-color: #4099FF;
+    color: white;
+    text-align: center; }
+  .container #signup {
+    text-decoration: none;
+    padding-top: 1rem; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  background-color: #DEDCC3; }
+
+.container .header {
+  background-color: #41434A;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
+  .container .header .title-header {
+    color: #F2F1E9; }
+  .container .header #menu-button {
+    color: #F2F1E9;
+    position: absolute;
+    padding-left: 2rem;
+    left: 0; }
+.container .ledger-list {
+  background-color: blue;
+  width: 5rem; }
+.container .ledger-table {
+  display: none; }
+  .container .ledger-table .table-content {
+    text-align: left; }
+    .container .ledger-table .table-content td {
+      max-width: 5rem; }
+.container .ledgers {
+  margin-top: 1rem;
+  border: 1px solid #6E9489;
+  border-radius: 1rem;
+  margin: auto;
+  width: 90%;
+  max-width: 24rem;
+  overflow: hidden; }
+  .container .ledgers .item {
+    background-color: #6E9489;
+    color: white;
+    width: 100%;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem; }
+  .container .ledgers .note {
+    background-color: white;
+    color: #41434A; }
+  .container .ledgers .date {
+    background-color: white;
+    color: lightgray;
+    font-size: .7rem;
+    position: relative;
+    left: 0; }

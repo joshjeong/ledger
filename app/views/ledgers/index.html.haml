@@ -1,0 +1,42 @@
+.container
+  .header
+    .title-header
+      Welcome, #{@user.name.capitalize}!
+    #menu-button.fa.fa-bars
+  .ledger-list
+    = link_to content_tag(:i, nil, class: "fa fa-plus"), new_user_ledger_path
+
+
+
+  .ledgers
+    - @ledgers.reverse_each do |ledger|
+      .item
+        = ledger.item
+        $#{ledger.price}0
+      .note  
+        = ledger.note
+      .date
+        = time_ago(ledger.created_at)
+
+  %table{class: "ledger-table"}
+    %tbody
+      %tr{class: "top_row"}
+        %td
+          Date
+        %td
+          Item
+        %td
+          Price
+        %td
+          Note
+        %td
+          Payment Type
+        / - @ledgers.first.attributes.each do |attr_name, value|
+      - @ledgers.each do |ledger|
+        %tr{class: "table-content"}
+          %td= get_date(ledger)
+          %td= ledger.item
+          %td= ledger.price
+          %td= ledger.note
+          %td= ledger.payment_type
+

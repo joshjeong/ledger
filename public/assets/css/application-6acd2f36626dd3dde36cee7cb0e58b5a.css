@@ -1,0 +1,162 @@
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, input, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input {
+  display: block; }
+
+.top_row {
+  text-shadow: none;
+  background-color: #165F80;
+  color: white;
+  text-align: center; }
+
+.table_format {
+  margin: auto;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 50px; }
+
+* {
+  box-sizing: border-box; }
+
+.title-header {
+  font-family: 'Signika', sans-serif;
+  font-size: 1.3rem; }
+
+.ledger-list {
+  font-family: 'Signika', sans-serif;
+  font-size: .8rem; }
+
+a {
+  text-decoration: none;
+  color: white; }
+  a:visited {
+    color: white; }
+
+.container {
+  border-collapse: collapse;
+  margin-top: 4rem;
+  width: 100%;
+  text-align: center; }
+  .container .new_user {
+    margin: auto;
+    width: 15rem; }
+    .container .new_user input {
+      width: 100%;
+      height: 2rem; }
+      .container .new_user input:focus {
+        outline: 0; }
+    .container .new_user .input-field {
+      border: 1px solid lightgray;
+      padding-left: 0.5rem; }
+    .container .new_user #signup {
+      position: relative;
+      top: 1rem; }
+
+.btn {
+  background-color: #587e8c;
+  color: white; }
+
+.ledger-container {
+  margin: auto;
+  border-collapse: collapse;
+  width: 17rem;
+  height: 20rem;
+  overflow: scroll; }
+  .ledger-container .header {
+    text-align: left;
+    background-color: #0b3040;
+    color: #FFFFFF;
+    padding: 1rem 2rem 0.2rem 2rem; }
+    .ledger-container .header .title-header {
+      text-align: center; }
+  .ledger-container .ledger-list {
+    width: 5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    background-color: lightgray; }
+    .ledger-container .ledger-list ul {
+      border-collapse: collapse; }
+      .ledger-container .ledger-list ul li {
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        border-bottom: 1px solid white; }
+        .ledger-container .ledger-list ul li a {
+          color: #165F80; }
+
+.ledger_form {
+  margin: auto;
+  width: 15rem; }
+  .ledger_form input {
+    width: 100%;
+    height: 2rem; }
+    .ledger_form input:focus {
+      outline: 0; }
+  .ledger_form .input-field {
+    border: 1px solid lightgray;
+    padding-left: 0.5rem; }
+  .ledger_form #signup {
+    position: relative;
+    top: 1rem; }
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
