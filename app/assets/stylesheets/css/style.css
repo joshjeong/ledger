@@ -69,8 +69,6 @@ select {
   .container #signup {
     text-decoration: none;
     padding-top: 1rem; }
-  .container #container {
-    background-color: black; }
 
 * {
   box-sizing: border-box; }
@@ -85,11 +83,18 @@ body {
   padding-bottom: 1rem; }
   .container .header .title-header {
     color: #F2F1E9; }
-  .container .header #add-btn {
+  .container .header #home-btn {
     color: #F2F1E9;
     position: absolute;
-    padding-left: 2rem;
-    left: 0; }
+    left: 1.5rem; }
+  .container .header #new-btn {
+    color: #F2F1E9;
+    position: absolute;
+    left: 3rem; }
+  .container .header #chart-btn {
+    color: #F2F1E9;
+    position: absolute;
+    left: 4.5rem; }
 .container .ledger-list {
   margin-top: 1rem;
   display: none;
@@ -126,3 +131,7 @@ body {
     font-size: .7rem;
     position: relative;
     left: 0; }
+
+#container {
+  width: 100%;
+  display: none; }

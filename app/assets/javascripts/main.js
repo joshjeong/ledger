@@ -11,6 +11,16 @@ var View = function(){
   this.toggleForm = function(){
     $('.ledger-list').slideToggle()
   }
+
+  this.showChart = function(){
+    $('#container').show();
+    $('.ledgers').hide();
+  }
+
+  this.showHome = function(){
+    $('.ledgers').show();
+    $('#container').hide();
+  }
 }
 
 Controller = {}
@@ -22,10 +32,12 @@ var Controller = function(view){
   this.bindEvents = function(){
     this.toggleListener();
     this.addItemListener();
+    this.chartListener();
+    this.homeListener();
   }
 
   this.toggleListener = function(){
-    $('#add-btn').on('click', this.showForm)
+    $('#new-btn').on('click', this.showForm)
   }
 
   this.addItemListener = function (){
@@ -35,8 +47,24 @@ var Controller = function(view){
     })
   }
 
+  this.chartListener = function(){
+    $('#chart-btn').on('click', this.triggerChart)
+  }
+
+  this.homeListener = function(){
+    $('#home-btn').on('click', this.triggerHome)
+  }
+
   this.showForm = function(){
     v.toggleForm();
+  }
+
+  this.triggerChart = function(){
+    v.showChart();
+  }
+
+  this.triggerHome = function(){
+    v.showHome();
   }
 
   this.addItem = function(){
