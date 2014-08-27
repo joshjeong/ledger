@@ -77,7 +77,8 @@ var Controller = function(view){
       data: newItem + "&user_id=" + user_id
     }).done(function(response) {
       $('.ledgers').prepend(response);
-      // $('#new_ledger').find($(".input-field")).val("");
+      $('#new_ledger').find($(".input-field")).val("");
+      v.toggleForm();
     })
   }
 
