@@ -7,14 +7,14 @@
     = render partial: "form"
 
   .ledgers
-    - @ledgers.reverse_each do |ledger|
+    - @ledgers.reverse_each do |purchase|
       .item
-        = ledger.item
-        $#{ledger.price}0
+        = purchase.item
+        $#{purchase.price}0
       .note  
-        = ledger.note
+        = purchase.note
       .date
-        = time_ago(ledger.created_at)
+        = time_ago(purchase.created_at)
 
   %table{class: "ledger-table"}
     %tbody
@@ -30,11 +30,61 @@
         %td
           Payment Type
         / - @ledgers.first.attributes.each do |attr_name, value|
-      - @ledgers.each do |ledger|
+      - @ledgers.each do |purchase|
         %tr{class: "table-content"}
-          %td= get_date(ledger)
-          %td= ledger.item
-          %td= ledger.price
-          %td= ledger.note
-          %td= ledger.payment_type
+          %td= get_date(purchase)
+          %td= purchase.item
+          %td= purchase.price
+          %td= purchase.note
+          %td= purchase.payment_type
+
+  #container{:style => "min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"}
+
+:javascript
+  $(document).ready(function(){
+    pieChart();
+  })
+
+  var pieChart = function(){
+
+    $(function () {
+        $('#container').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: 1,//null,
+                plotShadow: false,
+                backgroundColor: '#DEDCC3'
+            },
+            title: {
+                text: "Expenditure Breakdown"
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Expenditure Breakdown',
+                data: #{"#{expenditure_breakdown}"}
+            }]
+        });
+    });
+
+  }
+
+
+
+
 

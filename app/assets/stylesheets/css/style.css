@@ -69,6 +69,8 @@ select {
   .container #signup {
     text-decoration: none;
     padding-top: 1rem; }
+  .container #container {
+    background-color: black; }
 
 * {
   box-sizing: border-box; }
