@@ -2,11 +2,9 @@
   .header
     .title-header
       Welcome, #{@user.name.capitalize}!
-    #menu-button.fa.fa-bars
+    #add-btn.fa.fa-plus
   .ledger-list
-    = link_to content_tag(:i, nil, class: "fa fa-plus"), new_user_ledger_path
-
-
+    = render partial: "form"
 
   .ledgers
     - @ledgers.reverse_each do |ledger|

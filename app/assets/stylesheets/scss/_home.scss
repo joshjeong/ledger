@@ -11,7 +11,7 @@ body{
     .title-header{
       color: #F2F1E9;
     }
-    #menu-button{
+    #add-btn{
       color: #F2F1E9;
       position:absolute;
       padding-left: 2rem;
@@ -19,8 +19,13 @@ body{
     }
   }
   .ledger-list{
-    background-color: blue;
-    width: 5rem;
+    margin-top: 1rem;
+    display: none;
+    width: 100%;
+    select{
+      width: 8.3rem;
+      border-radius: 0;
+    }
   }
   .ledger-table{
     display: none;
@@ -32,10 +37,10 @@ body{
     }
   }
   .ledgers{
-    margin-top: 1rem;
     border: 1px solid #6E9489;
     border-radius: 1rem;
     margin: auto;
+    margin-top: 1rem;
     width: 90%;
     max-width: 24rem;
     overflow: hidden;
