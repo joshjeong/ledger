@@ -5,7 +5,7 @@
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
+del, dfn, em, img, ins, kbd, q, s, samp, select,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, input, center,
 dl, dt, dd, ol, ul, li,
@@ -44,6 +44,9 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+select {
+  -webkit-border-radius: 0px; }
 
 .container {
   max-width: 568px;
@@ -86,8 +89,12 @@ body {
     padding-left: 2rem;
     left: 0; }
 .container .ledger-list {
-  background-color: blue;
-  width: 5rem; }
+  margin-top: 1rem;
+  display: none;
+  width: 100%; }
+  .container .ledger-list select {
+    width: 8.3rem;
+    border-radius: 0; }
 .container .ledger-table {
   display: none; }
   .container .ledger-table .table-content {
@@ -95,10 +102,10 @@ body {
     .container .ledger-table .table-content td {
       max-width: 5rem; }
 .container .ledgers {
-  margin-top: 1rem;
   border: 1px solid #6E9489;
   border-radius: 1rem;
   margin: auto;
+  margin-top: 1rem;
   width: 90%;
   max-width: 24rem;
   overflow: hidden; }

@@ -2,6 +2,7 @@ class LedgersController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @ledgers = @user.ledgers
+    @ledger = Ledger.new
   end
 
   def new
@@ -11,8 +12,8 @@ class LedgersController < ApplicationController
   def create
     params.permit!
     @user = User.where('id = ?', params[:user_id])
+    binding.pry
     @user.first.ledgers.create(params[:ledger])
-    redirect_to user_ledgers_path
   end
 
   def show

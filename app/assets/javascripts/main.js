@@ -1,14 +1,14 @@
 $(document).ready(function(){
   var v = new View();
   var c = new Controller(v);
-  c.bindListeners()
+  c.bindEvents()
 })
 
 
 View = {}
 
 var View = function(){
-  this.changeMenuPosition = function(){
+  this.toggleForm = function(){
     $('.ledger-list').slideToggle()
   }
 }
@@ -17,12 +17,19 @@ Controller = {}
 
 var Controller = function(view){
   v = view
-  this.bindListeners = function(){
-    $('#menu-button').on('click', this.showMenu);
-  };
+  self = this
 
-  this.showMenu = function(){
-    v.changeMenuPosition()
+  this.bindEvents = function(){
+    this.addFormListener();
   }
+
+  this.addFormListener = function(){
+    $('#menu-button').on('click', this.showForm)
+  }
+
+  this.showForm = function(){
+    v.toggleForm();
+  }
+
 
 }

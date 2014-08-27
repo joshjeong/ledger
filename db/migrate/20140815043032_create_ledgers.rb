@@ -6,6 +6,7 @@ class CreateLedgers < ActiveRecord::Migration
       t.float :price
       t.text :note
       t.string :payment_type
+      t.string :expenditure
 
       t.timestamps
     end

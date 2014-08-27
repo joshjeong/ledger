@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140815043533) do
     t.float    "price"
     t.text     "note"
     t.string   "payment_type"
+    t.string   "expenditure"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
