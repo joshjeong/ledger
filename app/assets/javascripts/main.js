@@ -72,7 +72,7 @@ var Controller = function(view){
     var url = $('#log-btn').closest('form').attr('action')
     var user_id = url.match(/\d/)[0]
     $.ajax({
-      url: "/add_item",
+      url: "/users/" + user_id + "/ledgers",
       type: "POST",
       data: newItem + "&user_id=" + user_id
     }).done(function(response) {
