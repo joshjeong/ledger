@@ -11354,7 +11354,7 @@ Controller = {}
 var Controller = function(view){
   v = view
   this.bindListeners = function(){
-    $('#add-btn').on('click', this.showMenu);
+    $('#new-btn').on('click', this.showMenu);
   };
 
   this.showMenu = function(){

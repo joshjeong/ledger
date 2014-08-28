@@ -11,11 +11,20 @@ body{
     .title-header{
       color: #F2F1E9;
     }
-    #add-btn{
+    #home-btn{
       color: #F2F1E9;
       position:absolute;
-      padding-left: 2rem;
-      left: 0
+      left: 1.5rem
+    }
+    #new-btn{
+      color: #F2F1E9;
+      position:absolute;
+      left: 3rem
+    }
+    #chart-btn{
+      color: #F2F1E9;
+      position:absolute;
+      left: 4.5rem
     }
   }
   .ledger-list{
@@ -63,4 +72,9 @@ body{
       left: 0;
     }
   }
+}
+
+#container{
+  width: 100%;
+  display: none;
 }
