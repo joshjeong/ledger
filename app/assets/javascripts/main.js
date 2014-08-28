@@ -1,7 +1,10 @@
 $(document).ready(function(){
   var v = new View();
   var c = new Controller(v);
-  c.bindEvents()
+  c.bindEvents();
+  $('.purchase-link').on('click', function(e){
+    e.preventDefault();
+  })
 })
 
 
@@ -34,6 +37,7 @@ var Controller = function(view){
     this.addItemListener();
     this.chartListener();
     this.homeListener();
+    this.deleteListener();
   }
 
   this.toggleListener = function(){
@@ -55,6 +59,13 @@ var Controller = function(view){
     $('#home-btn').on('click', this.triggerHome)
   }
 
+  this.deleteListener = function(){
+    $('#delete-btn').on('click', function(e){
+      e.preventDefault();
+      self.deletePurchase($(this));
+    })
+  }
+
   this.showForm = function(){
     v.toggleForm();
   }
@@ -72,7 +83,7 @@ var Controller = function(view){
     var url = $('#log-btn').closest('form').attr('action')
     var user_id = url.match(/\d/)[0]
     $.ajax({
-      url: "/add_item",
+      url: "/users/" + user_id + "/ledgers",
       type: "POST",
       data: newItem + "&user_id=" + user_id
     }).done(function(response) {
@@ -80,6 +91,10 @@ var Controller = function(view){
       $('#new_ledger').find($(".input-field")).val("");
       v.toggleForm();
     })
+  }
+
+  this.deletePurchase = function(button){
+    debugger
   }
 
 

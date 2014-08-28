@@ -86,15 +86,18 @@ body {
   .container .header #home-btn {
     color: #F2F1E9;
     position: absolute;
-    left: 1.5rem; }
+    left: 1.5rem;
+    cursor: pointer; }
   .container .header #new-btn {
     color: #F2F1E9;
     position: absolute;
-    left: 3rem; }
+    left: 3rem;
+    cursor: pointer; }
   .container .header #chart-btn {
     color: #F2F1E9;
     position: absolute;
-    left: 4.5rem; }
+    left: 4.5rem;
+    cursor: pointer; }
 .container .ledger-list {
   margin-top: 1rem;
   display: none;
@@ -122,6 +125,10 @@ body {
     width: 100%;
     padding-top: 0.4rem;
     padding-bottom: 0.4rem; }
+    .container .ledgers .item .purchase-link {
+      cursor: default;
+      text-decoration: none;
+      color: white; }
   .container .ledgers .note {
     background-color: white;
     color: #41434A; }
