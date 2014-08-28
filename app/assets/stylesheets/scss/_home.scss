@@ -14,17 +14,20 @@ body{
     #home-btn{
       color: #F2F1E9;
       position:absolute;
-      left: 1.5rem
+      left: 1.5rem;
+      cursor: pointer;
     }
     #new-btn{
       color: #F2F1E9;
       position:absolute;
-      left: 3rem
+      left: 3rem;
+      cursor: pointer;
     }
     #chart-btn{
       color: #F2F1E9;
       position:absolute;
-      left: 4.5rem
+      left: 4.5rem;
+      cursor: pointer;
     }
   }
   .ledger-list{
@@ -54,6 +57,11 @@ body{
     max-width: 24rem;
     overflow: hidden;
     .item{
+      .purchase-link{
+        cursor: default;
+        text-decoration: none;
+        color: white;  
+      }
       background-color: #6E9489;
       color: white;
       width: 100%;
