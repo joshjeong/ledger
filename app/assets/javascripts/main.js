@@ -60,7 +60,7 @@ var Controller = function(view){
   }
 
   this.deleteListener = function(){
-    $('#delete-btn').on('click', function(e){
+    $('.ledgers').on('click', '#delete-btn', function(e){
       e.preventDefault();
       self.deletePurchase($(this));
     })
@@ -81,11 +81,11 @@ var Controller = function(view){
   this.addItem = function(){
     var newItem = $('#new_ledger').serialize();
     var url = $('#log-btn').closest('form').attr('action')
-    var user_id = url.match(/\d/)[0]
+    var userId = url.match(/\d/)[0]
     $.ajax({
-      url: "/users/" + user_id + "/ledgers",
+      url: "/users/" + userId + "/ledgers",
       type: "POST",
-      data: newItem + "&user_id=" + user_id
+      data: newItem + "&user_id=" + userId
     }).done(function(response) {
       $('.ledgers').prepend(response);
       $('#new_ledger').find($(".input-field")).val("");
@@ -94,7 +94,18 @@ var Controller = function(view){
   }
 
   this.deletePurchase = function(button){
-    debugger
+    var url = button.parents('.item').find('.purchase-link')[0].href
+    var params = url.split("/")
+    var itemId = params[6]
+    var userId = params[4]
+    $.ajax({
+      url: "/users/"+userId+"/ledgers/"+itemId,
+      type: "post",
+      dataType: "json",
+      data: {"_method":"delete"}
+    }).done(function(){
+      button.parents('.item').remove()
+    })
   }
 
 
