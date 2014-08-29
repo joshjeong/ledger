@@ -119,13 +119,13 @@ body {
   width: 90%;
   max-width: 24rem;
   overflow: hidden; }
-  .container .ledgers .item {
+  .container .ledgers .item-header {
     background-color: #6E9489;
     color: white;
     width: 100%;
     padding-top: 0.4rem;
     padding-bottom: 0.4rem; }
-    .container .ledgers .item .purchase-link {
+    .container .ledgers .item-header .purchase-link {
       cursor: default;
       text-decoration: none;
       color: white; }
