@@ -38,6 +38,7 @@ var Controller = function(view){
     this.chartListener();
     this.homeListener();
     this.deleteListener();
+    this.editListener();
   }
 
   this.toggleListener = function(){
@@ -61,9 +62,14 @@ var Controller = function(view){
 
   this.deleteListener = function(){
     $('.ledgers').on('click', '#delete-btn', function(e){
-      e.preventDefault();
       self.deletePurchase($(this));
     })
+  }
+
+  this.editListener = function(){
+    $('.ledgers').on('click', '#edit-btn', function(e){
+      self.editPurchase($(this));
+    })     
   }
 
   this.showForm = function(){
@@ -100,13 +106,22 @@ var Controller = function(view){
     var userId = params[4]
     $.ajax({
       url: "/users/"+userId+"/ledgers/"+itemId,
-      type: "post",
-      dataType: "json",
-      data: {"_method":"delete"}
+      type: "DELETE"
     }).done(function(){
       button.parents('.item').remove()
     })
   }
 
-
+  this.editPurchase = function(button){
+    var url = button.parents('.item').find('.purchase-link')[0].href
+    var params = url.split("/")
+    var itemId = params[6]
+    var userId = params[4]
+    $.ajax({
+      url: "/users/"+userId+"/ledgers/"+itemId+"/edit",
+      type: "GET"
+    }).done(function(response){
+      debugger
+    })
+  }
 }
