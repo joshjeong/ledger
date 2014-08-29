@@ -21,4 +21,12 @@ class LedgersController < ApplicationController
     @ledgers = Ledger.where('user_id = ? AND name = ?', user_id, @ledger.name)
   end
 
+  def destroy
+    user = User.find(params[:user_id])
+    user.ledgers.find(params[:id]).destroy
+    respond_to do |format|
+      format.json { head :no_content }
+    end
+  end
+
 end
