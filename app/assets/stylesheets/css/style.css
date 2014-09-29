@@ -49,7 +49,6 @@ select {
   -webkit-border-radius: 0px; }
 
 .container {
-  max-width: 568px;
   text-align: center;
   border-collapse: true; }
   .container input {
@@ -74,27 +73,28 @@ select {
   box-sizing: border-box; }
 
 body {
-  background-color: #DEDCC3; }
+  background: url("https://unsplash.imgix.net/reserve/m6rT4MYFQ7CT8j9m2AEC_JakeGivens%20-%20Sunset%20in%20the%20Park.JPG?q=75&fm=jpg&auto=format&s=0798c4e39d1acb580b25a93863dcae97") fixed no-repeat;
+  background-size: cover; }
 
 .container .header {
-  background-color: #41434A;
+  background-color: white;
   width: 100%;
   padding-top: 1rem;
   padding-bottom: 1rem; }
   .container .header .title-header {
-    color: #F2F1E9; }
+    color: #343434; }
   .container .header #home-btn {
-    color: #F2F1E9;
+    color: #343434;
     position: absolute;
     left: 1.5rem;
     cursor: pointer; }
   .container .header #new-btn {
-    color: #F2F1E9;
+    color: #343434;
     position: absolute;
     left: 3rem;
     cursor: pointer; }
   .container .header #chart-btn {
-    color: #F2F1E9;
+    color: #343434;
     position: absolute;
     left: 4.5rem;
     cursor: pointer; }
@@ -112,32 +112,47 @@ body {
     .container .ledger-table .table-content td {
       max-width: 5rem; }
 .container .ledgers {
-  border: 1px solid #6E9489;
+  border: 1px solid #343434;
   border-radius: 1rem;
   margin: auto;
   margin-top: 1rem;
-  width: 90%;
+  width: 100%;
   max-width: 24rem;
   overflow: hidden; }
-  .container .ledgers .item-header {
-    background-color: #6E9489;
-    color: white;
+  .container .ledgers .item {
+    padding-top: 5px;
     width: 100%;
-    padding-top: 0.4rem;
-    padding-bottom: 0.4rem; }
-    .container .ledgers .item-header .purchase-link {
-      cursor: default;
-      text-decoration: none;
-      color: white; }
-  .container .ledgers .note {
-    background-color: white;
-    color: #41434A; }
-  .container .ledgers .date {
-    background-color: white;
-    color: lightgray;
-    font-size: .7rem;
     position: relative;
-    left: 0; }
+    background-color: white;
+    border-bottom: 1px solid lightgray; }
+    .container .ledgers .item .price {
+      display: inline;
+      color: #41434A;
+      width: 20%;
+      position: absolute;
+      left: 0; }
+    .container .ledgers .item .item-header {
+      display: inline;
+      color: black; }
+      .container .ledgers .item .item-header .purchase-link {
+        cursor: default;
+        text-decoration: none;
+        color: black;
+        width: 60%; }
+    .container .ledgers .item .item-btns {
+      display: inline;
+      width: 20%;
+      position: absolute;
+      right: 0; }
+    .container .ledgers .item .note {
+      color: #41434A;
+      display: none; }
+    .container .ledgers .item .date {
+      background-color: white;
+      color: lightgray;
+      font-size: .7rem;
+      position: relative;
+      left: 0; }
 
 #container {
   width: 100%;
