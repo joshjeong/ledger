@@ -11,15 +11,18 @@
   .ledgers
     - @ledgers.reverse_each do |purchase|
       .item
+        .price
+          $#{purchase.price}0
         .item-header
           = link_to purchase.item, user_ledger_path(id: purchase.id), class: "purchase-link"
-          $#{purchase.price}0
+        .item-btns  
           #delete-btn.fa.fa-minus-square-o
           #edit-btn.fa.fa-edit
         .note  
           = purchase.note
         .date
           = time_ago(purchase.created_at)
+
 
   %table{class: "ledger-table"}
     %tbody

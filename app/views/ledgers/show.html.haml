@@ -1,30 +1,30 @@
-.ledger-container
-  .header
-    .title-header
-      #{@ledgers.first.name.capitalize}
-    .menu-button
-      = link_to content_tag(:i,nil, class:"fa fa-reply"), user_ledgers_path(user_id: params[:user_id])
-  %br
-  #container{:style => "min-width: 410px; height: 300px; margin: 0 auto"}
-  = render partial: "form"
+/ .ledger-container
+/   .header
+/     .title-header
+/       #{@ledgers.first.name.capitalize}
+/     .menu-button
+/       = link_to content_tag(:i,nil, class:"fa fa-reply"), user_ledgers_path(user_id: params[:user_id])
+/   %br
+/   #container{:style => "min-width: 410px; height: 300px; margin: 0 auto"}
+/   = render partial: "form"
 
-  %table{class: "table_format"}
-    %tr
-      %td{class: "top_row"}
-        Date
-      - @ledgers.first.attributes.each do |attr_name, value|
-        %td{class: "top_row"}
-          - if value != nil
-            - if filter_result(attr_name)
-              = attr_name.capitalize
-      - @ledgers.each do |ledger|
-        %tr
-          %td
-            = get_date(ledger)
-          - ledger.attributes.each do |attr_name, value|
-            %td
-              - if value != nil
-                - if filter_result(attr_name)
-                  = value 
+/   %table{class: "table_format"}
+/     %tr
+/       %td{class: "top_row"}
+/         Date
+/       - @ledgers.first.attributes.each do |attr_name, value|
+/         %td{class: "top_row"}
+/           - if value != nil
+/             - if filter_result(attr_name)
+/               = attr_name.capitalize
+/       - @ledgers.each do |ledger|
+/         %tr
+/           %td
+/             = get_date(ledger)
+/           - ledger.attributes.each do |attr_name, value|
+/             %td
+/               - if value != nil
+/                 - if filter_result(attr_name)
+/                   = value 
 
 
