@@ -82,25 +82,22 @@ body {
   background: rgba(255, 255, 255, 0.8);
   width: 100%;
   padding-top: 1rem;
-  padding-bottom: 1rem; }
+  padding-bottom: 1rem;
+  position: relative; }
   .container .header .title-header {
     font-size: 2rem;
     font-family: 'Lobster', cursive;
     color: green; }
+  .container .header .menu {
+    font-family: 'Lato', sans-serif;
+    position: relative;
+    top: 0.5rem;
+    padding: 0.5rem;
+    color: #343434;
+    display: inline; }
   .container .header #home-btn {
-    color: #343434;
-    position: absolute;
-    left: 2.5rem;
-    cursor: pointer; }
-  .container .header #new-btn {
-    color: #343434;
-    position: absolute;
-    left: 4rem;
     cursor: pointer; }
   .container .header #chart-btn {
-    color: #343434;
-    position: absolute;
-    left: 5.5rem;
     cursor: pointer; }
 .container .ledger-list {
   margin-top: 1rem;
@@ -118,12 +115,17 @@ body {
 .container .ledgers {
   font-family: 'Lato', sans-serif;
   border: 1px solid #343434;
-  border-radius: 1rem;
   margin: auto;
-  margin-top: 1rem;
+  margin-top: 2rem;
   width: 80%;
   max-width: 24rem;
-  overflow: hidden; }
+  position: relative; }
+  .container .ledgers #new-btn {
+    color: black;
+    position: absolute;
+    left: 0;
+    top: -1.5rem;
+    cursor: pointer; }
   .container .ledgers .item {
     padding-top: 5px;
     width: 100%;
