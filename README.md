@@ -1,4 +1,4 @@
 ledger_app
 ===========
 
-An app that will motivate me to ledger my body and my coding ability. Rails backend
+An app that will help me keep track of my purchases and budget my money wisely.
