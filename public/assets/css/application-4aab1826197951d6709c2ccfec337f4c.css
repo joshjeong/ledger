@@ -2,6 +2,7 @@
  * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
  * http://cssreset.com
  */
+
 @import url("http://fonts.googleapis.com/css?family=Lobster");
 @import url("http://fonts.googleapis.com/css?family=Lato");
 html, body, div, span, applet, object, iframe,
@@ -99,8 +100,6 @@ body {
     cursor: pointer; }
   .container .header #chart-btn {
     cursor: pointer; }
-  .container .header #export-btn {
-    cursor: pointer; }
 .container .ledger-list {
   margin-top: 1rem;
   display: none;
@@ -109,16 +108,11 @@ body {
     width: 8.3rem;
     border-radius: 0; }
 .container .ledger-table {
-  margin: auto;
-  margin-top: 2rem;
-  background: rgba(255, 255, 255, 0.8);
-  display: none;
-  max-width: 24rem; }
-  .container .ledger-table td {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 0.5rem; }
+  display: none; }
   .container .ledger-table .table-content {
     text-align: left; }
+    .container .ledger-table .table-content td {
+      max-width: 5rem; }
 .container .ledgers {
   font-family: 'Lato', sans-serif;
   border: 1px solid #343434;
@@ -135,6 +129,7 @@ body {
     cursor: pointer; }
   .container .ledgers .item {
     padding-top: 5px;
+    width: 100%;
     position: relative;
     background: rgba(255, 255, 255, 0.8);
     border-bottom: 1px solid lightgray; }
@@ -146,20 +141,17 @@ body {
       left: 1rem; }
     .container .ledgers .item .item-header {
       display: inline;
-      color: black;
-      width: 60%;
-      position: relative; }
+      color: black; }
       .container .ledgers .item .item-header .purchase-link {
         cursor: default;
         text-decoration: none;
-        color: black; }
+        color: black;
+        width: 60%; }
     .container .ledgers .item .item-btns {
       display: inline;
       width: 20%;
       position: absolute;
-      right: 0.3rem; }
-      .container .ledgers .item .item-btns #delete-btn {
-        padding-right: 1rem; }
+      right: 1rem; }
     .container .ledgers .item .note {
       font-size: 0.8rem;
       color: #41434A;
@@ -171,3 +163,19 @@ body {
 #container {
   width: 100%;
   display: none; }
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+

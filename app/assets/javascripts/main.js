@@ -16,17 +16,25 @@ var View = function(){
   }
 
   this.showChart = function(){
-    $('#container').show();
+    $('.ledger-table').hide();
     $('.ledgers').hide();
+    $('#container').show();
   }
 
   this.showHome = function(){
-    $('.ledgers').show();
     $('#container').hide();
+    $('.ledger-table').hide();
+    $('.ledgers').show();
   }
 
   this.showNote = function(item){
     item.parents('.item').find('.note').slideToggle()
+  }
+
+  this.showTable = function(){
+    $('.ledgers').hide();
+    $('#container').hide();
+    $('.ledger-table').show();
   }
 }
 
@@ -44,10 +52,15 @@ var Controller = function(view){
     this.deleteListener();
     this.editListener();
     this.noteListener();
+    this.tableListener();
+  }
+
+  this.tableListener = function(){
+    $('#export-btn').on('click', this.triggerExport)
   }
 
   this.toggleListener = function(){
-    $('#new-btn').on('click', this.showForm)
+    $('.ledgers').on('click', '#new-btn',this.showForm)
   }
 
   this.addItemListener = function (){
@@ -97,6 +110,10 @@ var Controller = function(view){
 
   this.triggerNote = function(item){
     v.showNote(item)
+  }
+
+  this.triggerExport = function(){
+    v.showTable();
   }
 
   this.addItem = function(){

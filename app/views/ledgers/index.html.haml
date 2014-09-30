@@ -8,6 +8,10 @@
       |
     .menu#chart-btn
       Chart
+    .menu
+      |
+    .menu#export-btn
+      Export
   .ledger-list
     = render partial: "form"
   .ledgers
@@ -35,11 +39,13 @@
         %td
           Item
         %td
-          Price
+          Price($)
         %td
           Note
         %td
-          Payment Type
+          Payment
+        %td
+          Expenditure
         / - @ledgers.first.attributes.each do |attr_name, value|
       - @ledgers.each do |purchase|
         %tr{class: "table-content"}
@@ -48,6 +54,7 @@
           %td= purchase.price
           %td= purchase.note
           %td= purchase.payment_type
+          %td= purchase.expenditure
 
   #container{:style => "min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"}
 

@@ -32,6 +32,9 @@ body{
     #chart-btn{
       cursor: pointer;
     }
+    #export-btn{
+      cursor: pointer;
+    }
   }
   .ledger-list{
     margin-top: 1rem;
@@ -43,23 +46,27 @@ body{
     }
   }
   .ledger-table{
+    margin: auto;
+    margin-top: 2rem;
+    background: rgba(255,255,255,0.8);
     display: none;
+    max-width: 24rem;
+    td{
+      // width: 5rem;
+      border: 1px solid rgba(0,0,0,0.1);
+      padding: 0.5rem;
+    }
     .table-content{
       text-align: left;
-      td{
-        max-width: 5rem;
-      }
     }
   }
   .ledgers{
     font-family: 'Lato', sans-serif;
     border: 1px solid #343434;
-    // border-radius: 1rem;
     margin: auto;
     margin-top: 2rem;
     width: 80%;
     max-width: 24rem;
-    // overflow: hidden;
     position: relative;
     #new-btn{
       color: black;
@@ -70,7 +77,6 @@ body{
     }
     .item{
       padding-top:5px;
-      width: 100%;
       position: relative;
       background: rgba(255,255,255,0.8);
       border-bottom: 1px solid lightgray;
@@ -82,20 +88,24 @@ body{
         left: 1rem;
       }
       .item-header{
+        display: inline;
+        color: black;
+        width: 60%;
+        position: relative;
         .purchase-link{
           cursor: default;
           text-decoration: none;
           color: black;
-          width: 60%;
         }
-        display: inline;
-        color: black;
       }
       .item-btns{
         display: inline;
         width: 20%;
         position: absolute;
-        right: 1rem;
+        right: 0.3rem;
+        #delete-btn{
+          padding-right: 1rem;
+        }
       }
       .note{
         font-size: 0.8rem;
