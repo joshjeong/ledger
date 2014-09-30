@@ -1,8 +1,13 @@
 .item
-  .item-header
-    = @ledger.item
+  .price
     $#{@ledger.price}0
-  .note  
+  .item-header
+    = link_to @ledger.item, user_ledger_path(id: @ledger.id), class: "purchase-link"
+  .item-btns  
+    #delete-btn.fa.fa-minus-square-o
+    #edit-btn.fa.fa-edit
+  %h2.note  
     = @ledger.note
   .date
     = time_ago(@ledger.created_at)
+
