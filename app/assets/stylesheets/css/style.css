@@ -99,6 +99,8 @@ body {
     cursor: pointer; }
   .container .header #chart-btn {
     cursor: pointer; }
+  .container .header #export-btn {
+    cursor: pointer; }
 .container .ledger-list {
   margin-top: 1rem;
   display: none;
@@ -107,11 +109,16 @@ body {
     width: 8.3rem;
     border-radius: 0; }
 .container .ledger-table {
-  display: none; }
+  margin: auto;
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  display: none;
+  max-width: 24rem; }
+  .container .ledger-table td {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.5rem; }
   .container .ledger-table .table-content {
     text-align: left; }
-    .container .ledger-table .table-content td {
-      max-width: 5rem; }
 .container .ledgers {
   font-family: 'Lato', sans-serif;
   border: 1px solid #343434;
@@ -128,7 +135,6 @@ body {
     cursor: pointer; }
   .container .ledgers .item {
     padding-top: 5px;
-    width: 100%;
     position: relative;
     background: rgba(255, 255, 255, 0.8);
     border-bottom: 1px solid lightgray; }
@@ -140,17 +146,20 @@ body {
       left: 1rem; }
     .container .ledgers .item .item-header {
       display: inline;
-      color: black; }
+      color: black;
+      width: 60%;
+      position: relative; }
       .container .ledgers .item .item-header .purchase-link {
         cursor: default;
         text-decoration: none;
-        color: black;
-        width: 60%; }
+        color: black; }
     .container .ledgers .item .item-btns {
       display: inline;
       width: 20%;
       position: absolute;
-      right: 1rem; }
+      right: 0.3rem; }
+      .container .ledgers .item .item-btns #delete-btn {
+        padding-right: 1rem; }
     .container .ledgers .item .note {
       font-size: 0.8rem;
       color: #41434A;
