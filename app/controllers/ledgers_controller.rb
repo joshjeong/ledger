@@ -31,6 +31,7 @@ class LedgersController < ApplicationController
   def edit
     @user = User.find(params[:user_id])
     @ledger = @user.ledgers.find(params[:id])
+    render partial: "form"
   end
 
   def update

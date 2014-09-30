@@ -24,6 +24,10 @@ var View = function(){
     $('.ledgers').show();
     $('#container').hide();
   }
+
+  this.showNote = function(item){
+    item.parents('.item').find('.note').slideToggle()
+  }
 }
 
 Controller = {}
@@ -39,6 +43,7 @@ var Controller = function(view){
     this.homeListener();
     this.deleteListener();
     this.editListener();
+    this.noteListener();
   }
 
   this.toggleListener = function(){
@@ -72,6 +77,12 @@ var Controller = function(view){
     })     
   }
 
+  this.noteListener = function(){
+    $('.ledgers').on('click', '.purchase-link', function(e){
+      self.triggerNote($(this))
+    });
+  }
+
   this.showForm = function(){
     v.toggleForm();
   }
@@ -82,6 +93,10 @@ var Controller = function(view){
 
   this.triggerHome = function(){
     v.showHome();
+  }
+
+  this.triggerNote = function(item){
+    v.showNote(item)
   }
 
   this.addItem = function(){
@@ -121,7 +136,7 @@ var Controller = function(view){
       url: "/users/"+userId+"/ledgers/"+itemId+"/edit",
       type: "GET"
     }).done(function(response){
-      debugger
+      $('.ledgers').before(response);
     })
   }
 }
