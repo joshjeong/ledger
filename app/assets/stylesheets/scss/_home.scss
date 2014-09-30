@@ -1,3 +1,6 @@
+@import url("http://fonts.googleapis.com/css?family=Lobster");
+@import url("http://fonts.googleapis.com/css?family=Lato");
+
 body{
   background: url('https://unsplash.imgix.net/reserve/m6rT4MYFQ7CT8j9m2AEC_JakeGivens%20-%20Sunset%20in%20the%20Park.JPG?q=75&fm=jpg&auto=format&s=0798c4e39d1acb580b25a93863dcae97') fixed no-repeat;
   background-size: cover;
@@ -5,29 +8,31 @@ body{
 
 .container{
   .header{
-    background-color: white;
+    background: rgba(255,255,255,0.8);
     width: 100%;
     padding-top: 1rem;
     padding-bottom: 1rem;
     .title-header{
-      color: #343434;
+      font-size: 2rem;
+      font-family: 'Lobster', cursive;
+      color: green;
     }
     #home-btn{
       color: #343434;
       position:absolute;
-      left: 1.5rem;
+      left: 2.5rem;
       cursor: pointer;
     }
     #new-btn{
       color: #343434;
       position:absolute;
-      left: 3rem;
+      left: 4rem;
       cursor: pointer;
     }
     #chart-btn{
       color: #343434;
       position:absolute;
-      left: 4.5rem;
+      left: 5.5rem;
       cursor: pointer;
     }
   }
@@ -50,25 +55,26 @@ body{
     }
   }
   .ledgers{
+    font-family: 'Lato', sans-serif;
     border: 1px solid #343434;
     border-radius: 1rem;
     margin: auto;
     margin-top: 1rem;
-    width: 100%;
+    width: 80%;
     max-width: 24rem;
     overflow: hidden;
     .item{
       padding-top:5px;
       width: 100%;
       position: relative;
-      background-color: white;
+      background: rgba(255,255,255,0.8);
       border-bottom: 1px solid lightgray;
       .price{
         display: inline;
         color: #41434A;
         width: 20%;
         position:absolute;
-        left: 0;
+        left: 1rem;
       }
       .item-header{
         .purchase-link{
@@ -84,18 +90,16 @@ body{
         display: inline;
         width: 20%;
         position: absolute;
-        right: 0;
+        right: 1rem;
       }
       .note{
+        font-size: 0.8rem;
         color: #41434A;
         display: none;
       }
       .date{
-        background-color: white;
-        color: lightgray;
+        color: gray;
         font-size: .7rem;
-        position: relative;
-        left: 0;
       }
     }
 
