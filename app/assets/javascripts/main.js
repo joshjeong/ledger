@@ -24,6 +24,10 @@ var View = function(){
     $('.ledgers').show();
     $('#container').hide();
   }
+
+  this.showNote = function(item){
+    item.parents('.item').find('.note').slideToggle()
+  }
 }
 
 Controller = {}
@@ -38,6 +42,8 @@ var Controller = function(view){
     this.chartListener();
     this.homeListener();
     this.deleteListener();
+    this.editListener();
+    this.noteListener();
   }
 
   this.toggleListener = function(){
@@ -60,10 +66,21 @@ var Controller = function(view){
   }
 
   this.deleteListener = function(){
-    $('#delete-btn').on('click', function(e){
-      e.preventDefault();
+    $('.ledgers').on('click', '#delete-btn', function(e){
       self.deletePurchase($(this));
     })
+  }
+
+  this.editListener = function(){
+    $('.ledgers').on('click', '#edit-btn', function(e){
+      self.editPurchase($(this));
+    })     
+  }
+
+  this.noteListener = function(){
+    $('.ledgers').on('click', '.purchase-link', function(e){
+      self.triggerNote($(this))
+    });
   }
 
   this.showForm = function(){
@@ -78,14 +95,18 @@ var Controller = function(view){
     v.showHome();
   }
 
+  this.triggerNote = function(item){
+    v.showNote(item)
+  }
+
   this.addItem = function(){
     var newItem = $('#new_ledger').serialize();
     var url = $('#log-btn').closest('form').attr('action')
-    var user_id = url.match(/\d/)[0]
+    var userId = url.match(/\d/)[0]
     $.ajax({
-      url: "/users/" + user_id + "/ledgers",
+      url: "/users/" + userId + "/ledgers",
       type: "POST",
-      data: newItem + "&user_id=" + user_id
+      data: newItem + "&user_id=" + userId
     }).done(function(response) {
       $('.ledgers').prepend(response);
       $('#new_ledger').find($(".input-field")).val("");
@@ -94,8 +115,28 @@ var Controller = function(view){
   }
 
   this.deletePurchase = function(button){
-    debugger
+    var url = button.parents('.item').find('.purchase-link')[0].href
+    var params = url.split("/")
+    var itemId = params[6]
+    var userId = params[4]
+    $.ajax({
+      url: "/users/"+userId+"/ledgers/"+itemId,
+      type: "DELETE"
+    }).done(function(){
+      button.parents('.item').remove()
+    })
   }
 
-
+  this.editPurchase = function(button){
+    var url = button.parents('.item').find('.purchase-link')[0].href
+    var params = url.split("/")
+    var itemId = params[6]
+    var userId = params[4]
+    $.ajax({
+      url: "/users/"+userId+"/ledgers/"+itemId+"/edit",
+      type: "GET"
+    }).done(function(response){
+      $('.ledgers').before(response);
+    })
+  }
 }

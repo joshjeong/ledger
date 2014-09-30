@@ -11,14 +11,18 @@
   .ledgers
     - @ledgers.reverse_each do |purchase|
       .item
-        = link_to purchase.item, user_ledger_path(id: purchase.id), class: "purchase-link"
-        $#{purchase.price}0
-        #delete-btn.fa.fa-minus-square-o
-        #edit-btn.fa.fa-edit
-      .note  
-        = purchase.note
-      .date
-        = time_ago(purchase.created_at)
+        .price
+          $#{purchase.price}0
+        .item-header
+          = link_to purchase.item, user_ledger_path(id: purchase.id), class: "purchase-link"
+        .item-btns  
+          #delete-btn.fa.fa-minus-square-o
+          #edit-btn.fa.fa-edit
+        %h2.note  
+          = purchase.note
+        .date
+          = time_ago(purchase.created_at)
+
 
   %table{class: "ledger-table"}
     %tbody
@@ -44,6 +48,23 @@
 
   #container{:style => "min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"}
 
+  / %select{name: "city_id", id:"city_id"}
+  /   %option{value:1}Lisbon
+  /   %option{value:2}Madrid
+  /   %option{value:12}Berlin
+
+
+  / - if :filter == "Expenditure"
+  /   hi
+  /   - @chart_title = "Expenditure Breakdown"
+  /   - @analysis = expenditure_breakdown
+  / - elsif :filter == "Payment Type"
+  /   = hello
+  /   - @chart_title = "Payment Type"
+  /   - @analysis = payment_breakdown
+
+
+
 :javascript
   $(document).ready(function(){
     pieChart();
@@ -60,7 +81,7 @@
                 backgroundColor: '#DEDCC3'
             },
             title: {
-                text: "Expenditure Breakdown"
+                text: "#{@chart_title}"
             },
             tooltip: {
                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -81,7 +102,7 @@
             series: [{
                 type: 'pie',
                 name: 'Expenditure Breakdown',
-                data: #{"#{expenditure_breakdown}"}
+                data: #{"#{payment_breakdown}"}
             }]
         });
     });

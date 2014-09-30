@@ -33,4 +33,13 @@ module LedgersHelper
     return chart_hash.to_a
   end
 
+  def payment_breakdown
+    total = calc_total
+    chart_hash = {}
+    @ledgers.each do |purchase|
+      chart_hash[purchase.payment_type] = (purchase.price/total)
+    end
+    return chart_hash.to_a
+  end
+
 end

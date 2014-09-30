@@ -1,7 +1,8 @@
 .item
-  = @ledger.item
-  $#{@ledger.price}0
-.note  
-  = @ledger.note
-.date
-  = time_ago(@ledger.created_at)
+  .item-header
+    = @ledger.item
+    $#{@ledger.price}0
+  .note  
+    = @ledger.note
+  .date
+    = time_ago(@ledger.created_at)

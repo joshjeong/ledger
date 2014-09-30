@@ -1,0 +1,10 @@
+.edit_form
+  = form_for @ledger, url: user_ledgers_path(@user) do |f| 
+
+    = f.text_field :item, placeholder: "Item", class: "input-field"
+    = f.text_field :price, placeholder: "Price ($)", class: "input-field"
+    = f.text_field :note, placeholder: "Note", class: "input-field"
+    = f.select :payment_type, ["Credit", "Cash", "Debit", "PayPal", "Venmo"]
+    = f.select :expenditure, ["Food", "Transportation", "Leisure", "Housing", "Other"]
+
+    = f.submit "Log", id: "log-btn"
