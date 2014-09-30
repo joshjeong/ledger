@@ -2,13 +2,16 @@
   .header
     .title-header
       Welcome, #{@user.name.capitalize}!
-    #home-btn.fa.fa-list
-    #new-btn.fa.fa-plus-square-o
-    #chart-btn.fa.fa-line-chart
+    .menu#home-btn
+      Home
+    .menu
+      |
+    .menu#chart-btn
+      Chart
   .ledger-list
     = render partial: "form"
-
   .ledgers
+    #new-btn.fa.fa-plus-square-o
     - @ledgers.reverse_each do |purchase|
       .item
         .price
@@ -78,7 +81,7 @@
                 plotBackgroundColor: null,
                 plotBorderWidth: 1,//null,
                 plotShadow: false,
-                backgroundColor: '#DEDCC3'
+                backgroundColor: 'rgba(255,255,255,0.8)'
             },
             title: {
                 text: "#{@chart_title}"
@@ -102,7 +105,7 @@
             series: [{
                 type: 'pie',
                 name: 'Expenditure Breakdown',
-                data: #{"#{payment_breakdown}"}
+                data: #{"#{expenditure_breakdown}"}
             }]
         });
     });

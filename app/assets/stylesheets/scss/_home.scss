@@ -12,27 +12,24 @@ body{
     width: 100%;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    position: relative;
     .title-header{
       font-size: 2rem;
       font-family: 'Lobster', cursive;
       color: green;
     }
-    #home-btn{
+    .menu{
+      font-family: 'Lato', sans-serif;
+      position: relative;
+      top: 0.5rem;
+      padding: 0.5rem;
       color: #343434;
-      position:absolute;
-      left: 2.5rem;
-      cursor: pointer;
+      display: inline;
     }
-    #new-btn{
-      color: #343434;
-      position:absolute;
-      left: 4rem;
+    #home-btn{
       cursor: pointer;
     }
     #chart-btn{
-      color: #343434;
-      position:absolute;
-      left: 5.5rem;
       cursor: pointer;
     }
   }
@@ -57,12 +54,20 @@ body{
   .ledgers{
     font-family: 'Lato', sans-serif;
     border: 1px solid #343434;
-    border-radius: 1rem;
+    // border-radius: 1rem;
     margin: auto;
-    margin-top: 1rem;
+    margin-top: 2rem;
     width: 80%;
     max-width: 24rem;
-    overflow: hidden;
+    // overflow: hidden;
+    position: relative;
+    #new-btn{
+      color: black;
+      position:absolute;
+      left: 0;
+      top: -1.5rem;
+      cursor: pointer;
+    }
     .item{
       padding-top:5px;
       width: 100%;
