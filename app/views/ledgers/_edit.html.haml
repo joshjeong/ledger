@@ -8,3 +8,5 @@
     = f.select :expenditure, ["Food", "Transportation", "Leisure", "Housing", "Other"]
 
     = f.submit "Update", id: "update-btn"
+%h1#hidden_info
+  #{@user.id}, #{@ledger.id}

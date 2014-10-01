@@ -80,6 +80,9 @@ body{
       position: relative;
       background: rgba(255,255,255,0.8);
       border-bottom: 1px solid lightgray;
+      #hidden_info{
+        display:none;
+      }
       .price{
         display: inline;
         color: #41434A;
