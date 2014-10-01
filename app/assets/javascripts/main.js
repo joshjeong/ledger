@@ -19,6 +19,7 @@ var View = function(){
     $('.ledger-table').hide();
     $('.ledgers').hide();
     $('#container').show();
+    pieChart();
   }
 
   this.showHome = function(){
@@ -28,7 +29,7 @@ var View = function(){
   }
 
   this.showNote = function(item){
-    item.parents('.item').find('.note').slideToggle()
+    item.find('.note').slideToggle()
   }
 
   this.showTable = function(){
@@ -93,12 +94,13 @@ var Controller = function(view){
 
   this.updateListener = function(){
     $('.ledgers').on('click', '#update-btn', function(e){
+      e.preventDefault();
       self.updatePurchase($(this), e)
     })
   }
 
   this.noteListener = function(){
-    $('.ledgers').on('click', '.purchase-link', function(e){
+    $('.ledgers').on('click', '.item', function(e){
       self.triggerNote($(this))
     });
   }
@@ -161,8 +163,22 @@ var Controller = function(view){
       url: "/users/"+userId+"/ledgers/"+itemId+"/edit",
       type: "GET"
     }).done(function(response){
-      button.target.parentNode.parentNode.innerHTML=response;
+      $(itemContainer).html(response);
     })
   }
 
+  this.updatePurchase = function(object, button){
+  var information = object.parents().closest('.item').children('#hidden_info').text().split(',')
+      userId = parseInt(information[0])
+      itemId = parseInt(information[1])
+      itemContainer = object.parents().closest('.item')
+    $.ajax({
+      url: "/users/"+userId+"/ledgers/"+itemId,
+      type: "PUT",
+      dataType: JSON,
+      data: data
+    }).done(function(response){
+      itemContainer.html(response);
+    })
+  }
 }
