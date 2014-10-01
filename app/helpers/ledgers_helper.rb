@@ -42,4 +42,11 @@ module LedgersHelper
     return chart_hash.to_a
   end
 
+  def get_table_headers
+    @headers = ["Date", "Item", "Price($)", "Note", "Payment", "Expenditure"]
+  end
+
+
+
+
 end

@@ -1,0 +1,16 @@
+%table{class: "ledger-table"}
+  %tbody
+    %tr{class: "top_row"}
+    - get_table_headers
+    - @headers.each do |title|
+      %td
+        =title
+      / - @ledgers.first.attributes.each do |attr_name, value|
+    - @ledgers.each do |purchase|
+      %tr{class: "table-content"}
+        %td= get_date(purchase)
+        %td= purchase.item
+        %td= purchase.price
+        %td= purchase.note
+        %td= purchase.payment_type
+        %td= purchase.expenditure

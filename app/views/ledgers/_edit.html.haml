@@ -1,5 +1,5 @@
 .edit_form
-  = form_for @ledger, url: user_ledgers_path(@user) do |f| 
+  = form_for [@user, @ledger], url: {action: "update"} do |f| 
 
     = f.text_field :item, placeholder: "Item", class: "input-field"
     = f.text_field :price, placeholder: "Price ($)", class: "input-field"
@@ -7,4 +7,6 @@
     = f.select :payment_type, ["Credit", "Cash", "Debit", "PayPal", "Venmo"]
     = f.select :expenditure, ["Food", "Transportation", "Leisure", "Housing", "Other"]
 
-    = f.submit "Log", id: "log-btn"
+    = f.submit "Update", id: "update-btn"
+%h1#hidden_info
+  #{@user.id},#{@ledger.id}

@@ -19,6 +19,7 @@ var View = function(){
     $('.ledger-table').hide();
     $('.ledgers').hide();
     $('#container').show();
+    pieChart();
   }
 
   this.showHome = function(){
@@ -28,7 +29,7 @@ var View = function(){
   }
 
   this.showNote = function(item){
-    item.parents('.item').find('.note').slideToggle()
+    item.find('.note').slideToggle()
   }
 
   this.showTable = function(){
@@ -53,6 +54,7 @@ var Controller = function(view){
     this.editListener();
     this.noteListener();
     this.tableListener();
+    this.updateListener();
   }
 
   this.tableListener = function(){
@@ -86,12 +88,19 @@ var Controller = function(view){
 
   this.editListener = function(){
     $('.ledgers').on('click', '#edit-btn', function(e){
-      self.editPurchase($(this));
+      self.editPurchase($(this),e);
     })     
   }
 
+  this.updateListener = function(){
+    $('.ledgers').on('click', '#update-btn', function(e){
+      e.preventDefault();
+      self.updatePurchase($(this), e)
+    })
+  }
+
   this.noteListener = function(){
-    $('.ledgers').on('click', '.purchase-link', function(e){
+    $('.ledgers').on('click', '.item', function(e){
       self.triggerNote($(this))
     });
   }
@@ -133,9 +142,9 @@ var Controller = function(view){
 
   this.deletePurchase = function(button){
     var url = button.parents('.item').find('.purchase-link')[0].href
-    var params = url.split("/")
-    var itemId = params[6]
-    var userId = params[4]
+        params = url.split("/")
+        itemId = params[6]
+        userId = params[4]
     $.ajax({
       url: "/users/"+userId+"/ledgers/"+itemId,
       type: "DELETE"
@@ -144,16 +153,32 @@ var Controller = function(view){
     })
   }
 
-  this.editPurchase = function(button){
-    var url = button.parents('.item').find('.purchase-link')[0].href
-    var params = url.split("/")
-    var itemId = params[6]
-    var userId = params[4]
+  this.editPurchase = function(object, button){
+    var url = object.parents('.item').find('.purchase-link')[0].href
+        params = url.split("/")
+        itemId = params[6]
+        userId = params[4]
+        itemContainer = $(button.target).parents('.item')
     $.ajax({
       url: "/users/"+userId+"/ledgers/"+itemId+"/edit",
       type: "GET"
     }).done(function(response){
-      $('.ledgers').before(response);
+      $(itemContainer).html(response);
+    })
+  }
+
+  this.updatePurchase = function(object, button){
+  var information = object.parents().closest('.item').children('#hidden_info').text().split(',')
+      userId = parseInt(information[0])
+      itemId = parseInt(information[1])
+      itemContainer = object.parents().closest('.item')
+    $.ajax({
+      url: "/users/"+userId+"/ledgers/"+itemId,
+      type: "PUT",
+      dataType: JSON,
+      data: data
+    }).done(function(response){
+      itemContainer.html(response);
     })
   }
 }
