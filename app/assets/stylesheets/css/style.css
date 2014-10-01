@@ -50,6 +50,9 @@ table {
 select {
   -webkit-border-radius: 0px; }
 
+* {
+  box-sizing: border-box; }
+
 .container {
   text-align: center;
   border-collapse: true; }
@@ -70,9 +73,6 @@ select {
   .container #signup {
     text-decoration: none;
     padding-top: 1rem; }
-
-* {
-  box-sizing: border-box; }
 
 body {
   background: url("https://unsplash.imgix.net/reserve/m6rT4MYFQ7CT8j9m2AEC_JakeGivens%20-%20Sunset%20in%20the%20Park.JPG?q=75&fm=jpg&auto=format&s=0798c4e39d1acb580b25a93863dcae97") fixed no-repeat;
