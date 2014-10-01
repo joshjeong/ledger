@@ -2,6 +2,7 @@
  * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
  * http://cssreset.com
  */
+
 @import url("http://fonts.googleapis.com/css?family=Lobster");
 @import url("http://fonts.googleapis.com/css?family=Lato");
 html, body, div, span, applet, object, iframe,
@@ -108,13 +109,18 @@ body {
   .container .ledger-list select {
     width: 8.3rem;
     border-radius: 0; }
-
-#container {
+.container .ledger-table {
+  margin: auto;
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.8);
   display: none;
-  width: 95%;
-  margin: 2rem auto; }
-
-.ledgers {
+  max-width: 24rem; }
+  .container .ledger-table td {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.5rem; }
+  .container .ledger-table .table-content {
+    text-align: left; }
+.container .ledgers {
   font-family: 'Lato', sans-serif;
   border: 1px solid #343434;
   margin: auto;
@@ -122,60 +128,65 @@ body {
   width: 80%;
   max-width: 24rem;
   position: relative; }
-  .ledgers #new-btn {
+  .container .ledgers #new-btn {
     color: black;
     position: absolute;
     left: 0;
     top: -1.5rem;
     cursor: pointer; }
-  .ledgers .item {
+  .container .ledgers .item {
     padding-top: 5px;
     position: relative;
     background: rgba(255, 255, 255, 0.8);
     border-bottom: 1px solid lightgray; }
-    .ledgers .item #hidden_info {
+    .container .ledgers .item #hidden_info {
       display: none; }
-    .ledgers .item .price {
+    .container .ledgers .item .price {
       display: inline;
       color: #41434A;
       width: 20%;
       position: absolute;
       left: 1rem; }
-    .ledgers .item .item-header {
+    .container .ledgers .item .item-header {
       display: inline;
       color: black;
       width: 60%;
       position: relative; }
-      .ledgers .item .item-header .purchase-link {
+      .container .ledgers .item .item-header .purchase-link {
         cursor: default;
         text-decoration: none;
         color: black; }
-    .ledgers .item .item-btns {
+    .container .ledgers .item .item-btns {
       display: inline;
       width: 20%;
       position: absolute;
       right: 0.3rem; }
-      .ledgers .item .item-btns #delete-btn {
+      .container .ledgers .item .item-btns #delete-btn {
         padding-right: 1rem; }
-    .ledgers .item .note {
+    .container .ledgers .item .note {
       font-size: 0.8rem;
       color: #41434A;
       display: none; }
-    .ledgers .item .date {
+    .container .ledgers .item .date {
       color: gray;
       font-size: .7rem; }
 
-.ledger-table {
-  margin: auto;
-  margin-top: 2rem;
-  background: rgba(255, 255, 255, 0.8);
-  display: none;
-  width: 95%;
-  font-size: 0.5rem; }
-  .ledger-table #table-title {
-    font-weight: bold; }
-  .ledger-table td {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 0.5rem; }
-  .ledger-table .table-content {
-    text-align: left; }
+#container {
+  width: 100%;
+  display: none; }
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+

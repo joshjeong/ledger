@@ -1,0 +1,19 @@
+.ledger-table{
+  margin: auto;
+  margin-top: 2rem;
+  background: rgba(255,255,255,0.8);
+  display: none;
+  width: 95%;
+  font-size: 0.5rem;
+  #table-title{
+    font-weight: bold;
+  }
+  td{
+    // width: 5rem;
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 0.5rem;
+  }
+  .table-content{
+    text-align: left;
+  }
+}

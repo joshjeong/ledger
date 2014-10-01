@@ -45,86 +45,12 @@ body{
       border-radius: 0;
     }
   }
-  .ledger-table{
-    margin: auto;
-    margin-top: 2rem;
-    background: rgba(255,255,255,0.8);
-    display: none;
-    max-width: 24rem;
-    td{
-      // width: 5rem;
-      border: 1px solid rgba(0,0,0,0.1);
-      padding: 0.5rem;
-    }
-    .table-content{
-      text-align: left;
-    }
-  }
-  .ledgers{
-    font-family: 'Lato', sans-serif;
-    border: 1px solid #343434;
-    margin: auto;
-    margin-top: 2rem;
-    width: 80%;
-    max-width: 24rem;
-    position: relative;
-    #new-btn{
-      color: black;
-      position:absolute;
-      left: 0;
-      top: -1.5rem;
-      cursor: pointer;
-    }
-    .item{
-      padding-top:5px;
-      position: relative;
-      background: rgba(255,255,255,0.8);
-      border-bottom: 1px solid lightgray;
-      #hidden_info{
-        display:none;
-      }
-      .price{
-        display: inline;
-        color: #41434A;
-        width: 20%;
-        position:absolute;
-        left: 1rem;
-      }
-      .item-header{
-        display: inline;
-        color: black;
-        width: 60%;
-        position: relative;
-        .purchase-link{
-          cursor: default;
-          text-decoration: none;
-          color: black;
-        }
-      }
-      .item-btns{
-        display: inline;
-        width: 20%;
-        position: absolute;
-        right: 0.3rem;
-        #delete-btn{
-          padding-right: 1rem;
-        }
-      }
-      .note{
-        font-size: 0.8rem;
-        color: #41434A;
-        display: none;
-      }
-      .date{
-        color: gray;
-        font-size: .7rem;
-      }
-    }
 
-    }
 }
 
+// Pie Chart
 #container{
-  width: 100%;
   display: none;
+  width: 95%; 
+  margin: 2rem auto;
 }
