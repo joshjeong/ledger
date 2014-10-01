@@ -108,18 +108,13 @@ body {
   .container .ledger-list select {
     width: 8.3rem;
     border-radius: 0; }
-.container .ledger-table {
-  margin: auto;
-  margin-top: 2rem;
-  background: rgba(255, 255, 255, 0.8);
+
+#container {
   display: none;
-  max-width: 24rem; }
-  .container .ledger-table td {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 0.5rem; }
-  .container .ledger-table .table-content {
-    text-align: left; }
-.container .ledgers {
+  width: 95%;
+  margin: 2rem auto; }
+
+.ledgers {
   font-family: 'Lato', sans-serif;
   border: 1px solid #343434;
   margin: auto;
@@ -127,49 +122,60 @@ body {
   width: 80%;
   max-width: 24rem;
   position: relative; }
-  .container .ledgers #new-btn {
+  .ledgers #new-btn {
     color: black;
     position: absolute;
     left: 0;
     top: -1.5rem;
     cursor: pointer; }
-  .container .ledgers .item {
+  .ledgers .item {
     padding-top: 5px;
     position: relative;
     background: rgba(255, 255, 255, 0.8);
     border-bottom: 1px solid lightgray; }
-    .container .ledgers .item #hidden_info {
+    .ledgers .item #hidden_info {
       display: none; }
-    .container .ledgers .item .price {
+    .ledgers .item .price {
       display: inline;
       color: #41434A;
       width: 20%;
       position: absolute;
       left: 1rem; }
-    .container .ledgers .item .item-header {
+    .ledgers .item .item-header {
       display: inline;
       color: black;
       width: 60%;
       position: relative; }
-      .container .ledgers .item .item-header .purchase-link {
+      .ledgers .item .item-header .purchase-link {
         cursor: default;
         text-decoration: none;
         color: black; }
-    .container .ledgers .item .item-btns {
+    .ledgers .item .item-btns {
       display: inline;
       width: 20%;
       position: absolute;
       right: 0.3rem; }
-      .container .ledgers .item .item-btns #delete-btn {
+      .ledgers .item .item-btns #delete-btn {
         padding-right: 1rem; }
-    .container .ledgers .item .note {
+    .ledgers .item .note {
       font-size: 0.8rem;
       color: #41434A;
       display: none; }
-    .container .ledgers .item .date {
+    .ledgers .item .date {
       color: gray;
       font-size: .7rem; }
 
-#container {
-  width: 100%;
-  display: none; }
+.ledger-table {
+  margin: auto;
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  display: none;
+  width: 95%;
+  font-size: 0.5rem; }
+  .ledger-table #table-title {
+    font-weight: bold; }
+  .ledger-table td {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.5rem; }
+  .ledger-table .table-content {
+    text-align: left; }
