@@ -1,0 +1,198 @@
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+
+@import url("http://fonts.googleapis.com/css?family=Lobster");
+@import url("http://fonts.googleapis.com/css?family=Lato");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp, select,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, input, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+select {
+  -webkit-border-radius: 0px; }
+
+* {
+  box-sizing: border-box; }
+
+.container {
+  text-align: center;
+  border-collapse: true; }
+  .container input {
+    border: 1px solid lightgray;
+    width: 17rem;
+    height: 2rem;
+    margin: auto;
+    display: block; }
+  .container .new_user {
+    margin-top: 3rem; }
+  .container .input-field {
+    padding-left: 1rem; }
+  .container .btn {
+    background-color: #4099FF;
+    color: white;
+    text-align: center; }
+  .container #signup {
+    text-decoration: none;
+    padding-top: 1rem; }
+
+body {
+  background: url("https://unsplash.imgix.net/reserve/m6rT4MYFQ7CT8j9m2AEC_JakeGivens%20-%20Sunset%20in%20the%20Park.JPG?q=75&fm=jpg&auto=format&s=0798c4e39d1acb580b25a93863dcae97") fixed no-repeat;
+  background-size: cover; }
+
+.container .header {
+  background: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: relative; }
+  .container .header .title-header {
+    font-size: 2rem;
+    font-family: 'Lobster', cursive;
+    color: green; }
+  .container .header .menu {
+    font-family: 'Lato', sans-serif;
+    position: relative;
+    top: 0.5rem;
+    padding: 0.5rem;
+    color: #343434;
+    display: inline; }
+  .container .header #home-btn {
+    cursor: pointer; }
+  .container .header #chart-btn {
+    cursor: pointer; }
+  .container .header #export-btn {
+    cursor: pointer; }
+.container .ledger-list {
+  margin-top: 1rem;
+  display: none;
+  width: 100%; }
+  .container .ledger-list select {
+    width: 8.3rem;
+    border-radius: 0; }
+
+#container {
+  display: none;
+  width: 95%;
+  margin: 2rem auto; }
+
+.ledgers {
+  font-family: 'Lato', sans-serif;
+  border: 1px solid #343434;
+  margin: auto;
+  margin-top: 2rem;
+  width: 80%;
+  max-width: 24rem;
+  position: relative; }
+  .ledgers #new-btn {
+    color: black;
+    position: absolute;
+    left: 0;
+    top: -1.5rem;
+    cursor: pointer; }
+  .ledgers .item {
+    padding-top: 5px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid lightgray; }
+    .ledgers .item #hidden_info {
+      display: none; }
+    .ledgers .item .price {
+      display: inline;
+      color: #41434A;
+      width: 20%;
+      position: absolute;
+      left: 1rem; }
+    .ledgers .item .item-header {
+      display: inline;
+      color: black;
+      width: 60%;
+      position: relative; }
+      .ledgers .item .item-header .purchase-link {
+        cursor: default;
+        text-decoration: none;
+        color: black; }
+    .ledgers .item .item-btns {
+      display: inline;
+      width: 20%;
+      position: absolute;
+      right: 0.3rem; }
+      .ledgers .item .item-btns #delete-btn {
+        padding-right: 1rem; }
+    .ledgers .item .note {
+      font-size: 0.8rem;
+      color: #41434A;
+      display: none; }
+    .ledgers .item .date {
+      color: gray;
+      font-size: .7rem; }
+
+.ledger-table {
+  margin: auto;
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  display: none;
+  width: 95%;
+  font-size: 0.5rem; }
+  .ledger-table #table-title {
+    font-weight: bold; }
+  .ledger-table td {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.5rem; }
+  .ledger-table .table-content {
+    text-align: left; }
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
