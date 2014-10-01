@@ -1,0 +1,48 @@
+#container{:style => "width: 95%; margin: 2rem auto"}
+
+
+:javascript
+
+  var pieChart = function(){
+
+    $(function () {
+        $('#container').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: 1,//null,
+                plotShadow: false,
+                backgroundColor: 'rgba(255,255,255,0.8)'
+            },
+            title: {
+                text: "#{@chart_title}"
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Expenditure Breakdown',
+                data: #{"#{expenditure_breakdown}"}
+            }]
+        });
+    });
+
+  }
+
+
+
+
+

@@ -1,41 +1,16 @@
 .container
   .header
-    .title-header
-      Welcome, #{@user.name.capitalize}!
-    .menu#home-btn
-      Home
-    .menu
-      |
-    .menu#chart-btn
-      Chart
-    .menu
-      |
-    .menu#export-btn
-      Export
+    = render partial: "navbar"
+
   .ledger-list
     = render partial: "form"
-  .ledgers
-    #new-btn.fa.fa-plus-square-o
-    - @ledgers.reverse_each do |purchase|
-      .item
-        .price
-          $#{purchase.price}0
-        .item-header
-          = link_to purchase.item, user_ledger_path(id: purchase.id), class: "purchase-link"
-        .item-btns  
-          #delete-btn.fa.fa-minus-square-o
-          #edit-btn.fa.fa-edit
-        %h2.note  
-          = purchase.note
-        .date
-          = time_ago(purchase.created_at)
+
+  = render partial: "river"
+  
+  = render partial: "table"
 
 
-  = render partial:"table"
-
-
-  #container{:style => "min-width: 310px; height: 400px; max-width: 600px; margin: 2rem auto"}
-
+  / Filter for highchart to select different piecharts
   / %select{name: "city_id", id:"city_id"}
   /   %option{value:1}Lisbon
   /   %option{value:2}Madrid
@@ -51,50 +26,4 @@
   /   - @chart_title = "Payment Type"
   /   - @analysis = payment_breakdown
 
-
-
-:javascript
-
-  var pieChart = function(){
-
-    $(function () {
-        $('#container').highcharts({
-            chart: {
-                plotBackgroundColor: null,
-                plotBorderWidth: 1,//null,
-                plotShadow: false,
-                backgroundColor: 'rgba(255,255,255,0.8)'
-            },
-            title: {
-                text: "#{@chart_title}"
-            },
-            tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            },
-            plotOptions: {
-                pie: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: {
-                        enabled: true,
-                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                        style: {
-                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                        }
-                    }
-                }
-            },
-            series: [{
-                type: 'pie',
-                name: 'Expenditure Breakdown',
-                data: #{"#{expenditure_breakdown}"}
-            }]
-        });
-    });
-
-  }
-
-
-
-
-
+  = render partial: "piechart"

@@ -1,0 +1,16 @@
+.ledgers
+  #new-btn.fa.fa-plus-square-o
+  - @ledgers.reverse_each do |purchase|
+    .item
+      .price
+        $#{purchase.price}0
+      .item-header
+        = link_to purchase.item, user_ledger_path(id: purchase.id), class: "purchase-link"
+      .item-btns  
+        #delete-btn.fa.fa-minus-square-o
+        #edit-btn.fa.fa-edit
+      %h2.note  
+        = purchase.note
+      .date
+        = time_ago(purchase.created_at)
+
