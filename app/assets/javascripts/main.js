@@ -53,6 +53,7 @@ var Controller = function(view){
     this.editListener();
     this.noteListener();
     this.tableListener();
+    this.updateListener();
   }
 
   this.tableListener = function(){
@@ -86,8 +87,14 @@ var Controller = function(view){
 
   this.editListener = function(){
     $('.ledgers').on('click', '#edit-btn', function(e){
-      self.editPurchase($(this));
+      self.editPurchase($(this),e);
     })     
+  }
+
+  this.updateListener = function(){
+    $('.ledgers').on('click', '#update-btn', function(e){
+      self.updatePurchase($(this), e)
+    })
   }
 
   this.noteListener = function(){
@@ -133,9 +140,9 @@ var Controller = function(view){
 
   this.deletePurchase = function(button){
     var url = button.parents('.item').find('.purchase-link')[0].href
-    var params = url.split("/")
-    var itemId = params[6]
-    var userId = params[4]
+        params = url.split("/")
+        itemId = params[6]
+        userId = params[4]
     $.ajax({
       url: "/users/"+userId+"/ledgers/"+itemId,
       type: "DELETE"
@@ -144,16 +151,18 @@ var Controller = function(view){
     })
   }
 
-  this.editPurchase = function(button){
-    var url = button.parents('.item').find('.purchase-link')[0].href
-    var params = url.split("/")
-    var itemId = params[6]
-    var userId = params[4]
+  this.editPurchase = function(object, button){
+    var url = object.parents('.item').find('.purchase-link')[0].href
+        params = url.split("/")
+        itemId = params[6]
+        userId = params[4]
+        itemContainer = $(button.target).parents('.item')
     $.ajax({
       url: "/users/"+userId+"/ledgers/"+itemId+"/edit",
       type: "GET"
     }).done(function(response){
-      $('.ledgers').before(response);
+      button.target.parentNode.parentNode.innerHTML=response;
     })
   }
+
 }
